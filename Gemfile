@@ -36,11 +36,16 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Gems que tuve que agregar para la app que estoy haciendo
 # Rubocop -> Me lo pidieron en una card
 gem 'rubocop', '~> 0.59.1', require: false
 
 # Devise para el login
-gem 'devise', '~> 4.5.0'
+gem 'devise'
+
+# Autenticacion de logins
+gem 'devise_token_auth'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
