@@ -46,6 +46,8 @@ gem 'devise'
 # Autenticacion de logins
 gem 'devise_token_auth'
 
+# Esta gem me la pidio devise_token_auth
+gem 'omniauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
