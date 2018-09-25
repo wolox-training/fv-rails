@@ -78,4 +78,5 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 
+  # config.action_mailer.default_url_options = { :host => "localhost:3000" }
 end
