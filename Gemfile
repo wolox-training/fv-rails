@@ -57,6 +57,19 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 end
 
+# Para limpiar la BD despues de cada test
+group :test do
+  gem 'database_cleaner'
+end
+
+# Para crear datos random en tests
+group :test do
+  gem 'faker'
+end
+
+# Para crear factories en los modelos
+gem 'factory_bot'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
