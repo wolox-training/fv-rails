@@ -57,6 +57,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 # Para limpiar la BD despues de cada test
 group :test do
   gem 'database_cleaner'

@@ -253,16 +253,11 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-  devise (~> 4.5.0)
-  devise_token_auth (~> 1.0.0.rc2)
-=======
   database_cleaner
   devise
   devise_token_auth
   factory_bot
   faker
->>>>>>> e14ee82... Added faker, factory_bot and database_cleaner gems to Gemfile
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
