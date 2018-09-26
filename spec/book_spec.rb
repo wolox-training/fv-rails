@@ -2,25 +2,25 @@ require 'rails_helper'
 
 describe Book, type: :model do
   it do
-    should validate_presence_of(:titulo)
+    should validate_presence_of(:title)
   end
   it do
-    should validate_presence_of(:autor)
+    should validate_presence_of(:author)
   end
 
   subject(:book) do
     Book.new(
-      titulo: titulo, autor: autor, genero: genero, año: año,
-      editor: editor, image: image
+      title: title, author: author, genre: genre, year: year,
+      publisher: publisher, image: image
     )
   end
 
-  let(:titulo)                { Faker::Book.title }
-  let(:autor)                 { Faker::Book.author }
-  let(:editor)                { Faker::Book.publisher }
-  let(:genero)                { Faker::Book.genre }
-  let(:image)                 { ':O' }
-  let(:año)                   { '2018' }
+  let(:title)                { Faker::Book.title }
+  let(:author)               { Faker::Book.author }
+  let(:publisher)            { Faker::Book.publisher }
+  let(:genre)                { Faker::Book.genre }
+  let(:image)                { ':O' }
+  let(:year)                 { '2018' }
 
   it do
     is_expected.to be_valid
@@ -37,15 +37,15 @@ describe Book, type: :model do
 
   describe '#create' do
     context 'When the author is nil' do
-      let(:autor) { nil }
+      let(:author) { nil }
 
       it do
         is_expected.to be_invalid
       end
     end
 
-    context 'When the last_name is nil' do
-      let(:titulo) { nil }
+    context 'When the title is nil' do
+      let(:title) { nil }
 
       it do
         is_expected.to be_invalid
