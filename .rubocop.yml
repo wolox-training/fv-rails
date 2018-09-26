@@ -1,5 +1,6 @@
 Documentation:
   Enabled: false
+<<<<<<< HEAD
 
 Metrics/LineLength:
   Max: 99
@@ -8,4 +9,11 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Metrics/BlockLength:
+=======
+LineLength:
+  Max: 150
+FrozenStringLiteralComment:
+>>>>>>> 5280430... Changed a few things around so Rubocop stops crying
+  Enabled: false
+BlockLength:
   Enabled: false
