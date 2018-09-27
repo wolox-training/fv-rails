@@ -1,11 +1,19 @@
 Documentation:
   Enabled: false
 
+<<<<<<< HEAD
 LineLength:
+=======
+Metrics/LineLength:
+>>>>>>> 2851c79... Fixed .rubocop.yml, hopfully for the last time
   Max: 99
 
-FrozenStringLiteralComment:
+Style/FrozenStringLiteralComment:
   Enabled: false
 
+<<<<<<< HEAD
 BlockLength:
+=======
+Metrics/BlockLength:
+>>>>>>> 2851c79... Fixed .rubocop.yml, hopfully for the last time
   Enabled: false
