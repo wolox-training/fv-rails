@@ -1,7 +1,7 @@
 Documentation:
   Enabled: false
 LineLength:
-  Max: 150
+  Max: 99
 FrozenStringLiteralComment:
   Enabled: false
 BlockLength:
