@@ -23,15 +23,7 @@ before_install:
   - gem update --system
 
 before_script:
-<<<<<<< HEAD
-<<<<<<< HEAD
   #- cp config/database.travis.yml config/database.yml
-=======
-  - cp config/database.travis.yml config/database.yml
->>>>>>> 02ed457... Updated travis.yml
-=======
-  #- cp config/database.travis.yml config/database.yml
->>>>>>> d8bc61b... Fixing the .travis.yml v9.9.9999.1
   - psql -c "CREATE USER \"wbooks_api\" WITH PASSWORD 'wbooks_api';" -U postgres
   - psql -c "DROP DATABASE IF EXISTS \"wbooks_api_test\";" -U postgres
   - psql -c "CREATE DATABASE \"wbooks_api_test\" ENCODING 'utf8';" -U postgres
