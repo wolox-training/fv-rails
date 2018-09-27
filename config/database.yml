@@ -59,6 +59,11 @@ test:
   <<: *default
   database: wbooks_api_test
   username: <%= ENV.fetch("DB_USERNAME", "wbooks_api") %>
+<<<<<<< HEAD
+=======
+
+  # The password associated with the postgres role (username).
+>>>>>>> 2fffe9b... Fixed unitary testing
   password: <%= ENV.fetch("DB_PASSWORD", "wbooks_api") %>
 
 # As with config/secrets.yml, you never want to store sensitive information,

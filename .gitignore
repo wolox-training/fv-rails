@@ -25,8 +25,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-<<<<<<< HEAD
 
 /test/*
-=======
->>>>>>> b503ac8... Changed Book's column names to English
