@@ -32,8 +32,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+<<<<<<< HEAD
 
       t.timestamps null: false
+=======
+      t.json :tokens
+      t.timestamps
+>>>>>>> d0b0a8d... Changed a few migrations to avoid having to drop Users table and cleaned up the User model
     end
 
     add_index :users, :email,                unique: true
