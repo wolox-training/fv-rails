@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_10_02_151300) do
-=======
 ActiveRecord::Schema.define(version: 2018_09_24_195258) do
->>>>>>> 0890493... The Book model has been added. Books can now be created through the Rails console
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
