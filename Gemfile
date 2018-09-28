@@ -41,11 +41,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rubocop', '~> 0.59.1', require: false
 
 # Devise para el login
-gem 'devise'
+gem 'devise', '~> 4.5.0'
+
 
 # Autenticacion de logins
-gem 'devise_token_auth'
+gem 'devise_token_auth', '~> 1.0.0.rc2'
 
+
+<<<<<<< HEAD
+=======
+# Esta gem me la pidio devise_token_auth
+gem 'omniauth', '~> 1.8.1'
+>>>>>>> ee31f9e... Added validations to user.rb and specified version for several gems in Gemfile
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
