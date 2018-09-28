@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_09_24_185921) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +43,5 @@ ActiveRecord::Schema.define(version: 2018_09_24_185921) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
-
 
 end
