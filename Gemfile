@@ -54,6 +54,9 @@ gem 'active_model_serializers', '~> 0.10.0'
 >>>>>>> 950c23e... Created Book controller and serializer and routes for both book#index and book#show
 #####
 
+gem 'wor-paginate', '~> 0.1.4'
+
+# For testing
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
