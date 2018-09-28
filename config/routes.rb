@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'books', to: 'book#index'
   get 'books/show', to: 'book#show'
   mount_devise_token_auth_for 'User', at: 'auth'
