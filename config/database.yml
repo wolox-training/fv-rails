@@ -58,6 +58,8 @@ development:
 test:
   <<: *default
   database: wbooks_api_test
+  username: <%= ENV.fetch("DB_USERNAME", "wbooks_api") %>
+  password: <%= ENV.fetch("DB_PASSWORD", "wbooks_api") %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
