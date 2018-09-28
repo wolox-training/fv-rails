@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_10_03_171841) do
+=======
+ActiveRecord::Schema.define(version: 2018_09_28_143747) do
+>>>>>>> 878a52c... Created Book controller and serializer and routes for both book#index and book#show
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
