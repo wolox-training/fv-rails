@@ -49,7 +49,6 @@ gem 'devise_token_auth', '~> 1.0.0.rc2'
 # Required for devise_token_auth
 #gem 'omniauth', '~> 1.8.1'
 #####
->>>>>>> d7a8730... Changed a few migrations to avoid having to drop Users table and cleaned up the User model
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
