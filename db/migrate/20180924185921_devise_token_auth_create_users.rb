@@ -13,23 +13,23 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       ## Recoverable
       #add_column :users, :reset_password_token, :string
       #add_column :users, :reset_password_sent_at, :datetime
-    add_column :users, :allow_password_change, :boolean, :default => false
+      #add_column :users, :allow_password_change, :boolean, :default => false
 
       ## Rememberable
       #add_column :users, :remember_created_at, :datetime
 
       ## Trackable
-    add_column :users, :sign_in_count, :integer, :default => 0, :null => false
-    add_column :users, :current_sign_in_at, :datetime
-    add_column :users, :last_sign_in_at, :datetime
-    add_column :users, :current_sign_in_ip, :string
-    add_column :users, :last_sign_in_ip, :string
+      #add_column :users, :sign_in_count, :integer, :default => 0, :null => false
+      #add_column :users, :current_sign_in_at, :datetime
+      #add_column :users, :last_sign_in_at, :datetime
+      #add_column :users, :current_sign_in_ip, :string
+      #add_column :users, :last_sign_in_ip, :string
 
       ## Confirmable
-    add_column :users, :confirmation_token, :string
-    add_column :users, :confirmed_at, :datetime
-    add_column :users, :confirmation_sent_at, :datetime
-    add_column :users, :unconfirmed_email, :string # Only if using reconfirmable
+      add_column :users, :confirmation_token, :string
+      add_column :users, :confirmed_at, :datetime
+      add_column :users, :confirmation_sent_at, :datetime
+      add_column :users, :unconfirmed_email, :string # Only if using reconfirmable
 
 
       ## Lockable
