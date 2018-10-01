@@ -1,13 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Para el laburo
 ruby '2.5.1'
 
-# Para casa
-# ruby '2.5.0'
-
-gem 'actionmailer'
+#gem 'actionmailer'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -54,31 +50,14 @@ gem 'devise', '~> 4.5.0'
 gem 'devise_token_auth', '~> 1.0.0.rc2'
 #####
 
-# Para los tests
-group :development, :test do
-  gem 'rspec-rails', '~> 3.8'
-end
-
-group :test do
-  gem 'shoulda-matchers', '~> 3.1'
-end
-
-# Para limpiar la BD despues de cada test
-group :test do
-  gem 'database_cleaner'
-end
-
-# Para crear datos random en tests
-group :test do
-  gem 'faker'
-end
-
-# Para crear factories en los modelos
-gem 'factory_bot'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.8'
+  # Para crear factories en los modelos
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'faker'
 end
 
 group :development do
@@ -96,6 +75,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
