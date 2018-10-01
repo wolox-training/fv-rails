@@ -12,12 +12,12 @@ describe Book, type: :model do
     create(:book)
   end
 
-#  let(:title)                { Faker::Book.title }
-#  let(:author)               { Faker::Book.author }
-#  let(:publisher)            { Faker::Book.publisher }
-#  let(:genre)                { Faker::Book.genre }
-#  let(:image)                { ':O' }
-#  let(:year)                 { '2018' }
+  #  let(:title)                { Faker::Book.title }
+  #  let(:author)               { Faker::Book.author }
+  #  let(:publisher)            { Faker::Book.publisher }
+  #  let(:genre)                { Faker::Book.genre }
+  #  let(:image)                { ':O' }
+  #  let(:year)                 { '2018' }
 
   it do
     is_expected.to be_valid

@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :book do
     title Faker::Book.title
     author Faker::Book.author
@@ -15,7 +14,5 @@ FactoryBot.define do
     trait :nilTitle do
       title nil
     end
-
   end
-
 end
