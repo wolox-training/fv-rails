@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Book, type: :model do
-
   #  before(:all) do
   #    @book = create(:book)
   #  end
@@ -24,9 +23,7 @@ describe Book, type: :model do
   #  let(:image)                { ':O' }
   #  let(:year)                 { '2018' }
 
-
   describe '#create' do
-
     context 'When the book is properly set' do
       let(:book) { create(:book) }
       it do
@@ -80,6 +77,5 @@ describe Book, type: :model do
         is_expected.to be_invalid
       end
     end
-
   end
 end
