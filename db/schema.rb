@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_143747) do
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.json "tokens"
 =======
     t.boolean "allow_password_change", default: false
@@ -58,6 +59,8 @@ ActiveRecord::Schema.define(version: 2018_09_28_143747) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+=======
+>>>>>>> 615202b... Book Index and Book Show pages are working. Since the app can't send emails (yet), user authentication is disabled but can be enabled by uncommenting the before_action line in Book Controller
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

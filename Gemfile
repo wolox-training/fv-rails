@@ -46,17 +46,11 @@ gem 'devise', '~> 4.5.0'
 
 # Login authenticacion
 gem 'devise_token_auth', '~> 1.0.0.rc2'
-<<<<<<< HEAD
-=======
 
 # Json serializer
 gem 'active_model_serializers', '~> 0.10.0'
->>>>>>> 950c23e... Created Book controller and serializer and routes for both book#index and book#show
 #####
 
-gem 'wor-paginate', '~> 0.1.4'
-
-# For testing
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -82,7 +76,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
