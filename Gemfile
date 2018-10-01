@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -46,8 +47,6 @@ gem 'devise', '~> 4.5.0'
 # Login authenticacion
 gem 'devise_token_auth', '~> 1.0.0.rc2'
 
-# Required for devise_token_auth
-#gem 'omniauth', '~> 1.8.1'
 #####
 
 group :development, :test do
