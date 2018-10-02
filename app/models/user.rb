@@ -6,6 +6,5 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
   validates :first_name, presence: true
   validates :last_name, presence: true
-
   has_many :rents, dependent: :destroy
 end
