@@ -46,7 +46,6 @@ gem 'devise', '~> 4.5.0'
 
 # Login authenticacion
 gem 'devise_token_auth', '~> 1.0.0.rc2'
-
 #####
 
 group :development, :test do
