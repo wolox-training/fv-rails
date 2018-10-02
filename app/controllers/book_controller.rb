@@ -10,5 +10,5 @@ class BookController < ApplicationController
     render json: Book.find(params[:id])
   end
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 end
