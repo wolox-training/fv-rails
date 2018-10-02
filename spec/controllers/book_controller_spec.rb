@@ -12,7 +12,7 @@ include_context 'Authenticated User'
         expected = ActiveModel::Serializer::CollectionSerializer.new(
           books, each_serializer: BookSerializer
         ).to_json
-        expect(response_body.to_json) =~ JSON.parse(expected)
+        expect(response.body.to_json) =~ JSON.parse(expected)
       end
 
       it 'responds with 200 status' do
@@ -30,9 +30,7 @@ include_context 'Authenticated User'
       end
 
       it 'responses with the book json' do
-        expect(response_body.to_json).to eq BookSerializer.new(
-          rent, root: false
-        ).to_json
+        expect(response.body.to_json) =~ BookSerializer.new(book).to_json
       end
 
       it 'responds with 200 status' do
