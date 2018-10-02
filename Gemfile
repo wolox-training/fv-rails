@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -36,11 +37,16 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# Rubocop -> Me lo pidieron en una card
+##### Additional gems for WBooksAPI
+# Rubocop
 gem 'rubocop', '~> 0.59.1', require: false
 
-# Devise para el login
+# Devise for logins
 gem 'devise', '~> 4.5.0'
+
+# Login authenticacion
+gem 'devise_token_auth', '~> 1.0.0.rc2'
+#####
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
