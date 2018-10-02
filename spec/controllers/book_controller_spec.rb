@@ -2,19 +2,15 @@ require 'rails_helper'
 require 'support/shared_context'
 
 describe BookController, type: :controller do
-  include_context 'Authenticated User'
+include_context 'Authenticated User'
 
   describe 'GET #index' do
     context 'When fetching all the books' do
       let!(:books) { create_list(:book, 3) }
 
-      before do
-        get :index, params: { id: user.id }
-      end
-
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
-          rents, each_serializer: RentSerializer
+          books, each_serializer: BookSerializer
         ).to_json
         expect(response_body.to_json) =~ JSON.parse(expected)
       end
@@ -30,11 +26,11 @@ describe BookController, type: :controller do
       let!(:book) { create(:book) }
 
       before do
-        get :show, params: { user_id: user.id, id: rent.id }
+        get :show, params: { id: book.id }
       end
 
       it 'responses with the book json' do
-        expect(response_body.to_json).to eq RentSerializer.new(
+        expect(response_body.to_json).to eq BookSerializer.new(
           rent, root: false
         ).to_json
       end
