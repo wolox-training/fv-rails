@@ -14,5 +14,7 @@ class FixBookColumnNames < ActiveRecord::Migration[5.2]
 
     rename_column :books, :genero, :genre
     change_column_null :books, :genre, false
+
+    change_column_null :books, :image, false
   end
 end
