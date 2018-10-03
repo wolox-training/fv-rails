@@ -3,6 +3,7 @@ require 'support/shared_context'
 
 describe BookController, type: :controller do
   include_context 'Authenticated User'
+  include Devise::Test::ControllerHelpers
 
   describe 'GET #index' do
     context 'When fetching all the books' do
