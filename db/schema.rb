@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_143501) do
+ActiveRecord::Schema.define(version: 2018_10_03_171841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2018_09_26_143501) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "book_id"
-    t.date "initial_date"
-    t.date "final_date"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.date "initial_date", null: false
+    t.date "final_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_rents_on_book_id"
@@ -49,21 +49,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_143501) do
     t.string "last_name", null: false
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
-<<<<<<< HEAD
     t.json "tokens"
-=======
-    t.boolean "allow_password_change", default: false
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
->>>>>>> e43e131... Added Rent model which belongs_to Book and User. User can now call .rents to show the rents that belong to it.
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
