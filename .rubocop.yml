@@ -1,11 +1,11 @@
 Documentation:
   Enabled: false
 
-LineLength:
+Metrics/LineLength:
   Max: 99
 
-FrozenStringLiteralComment:
+Style/FrozenStringLiteralComment:
   Enabled: false
 
-BlockLength:
+Metrics/BlockLength:
   Enabled: false
