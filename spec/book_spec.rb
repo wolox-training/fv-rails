@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Book, type: :model do
-  let(:book) { create(:book) }
-  subject { book }
+  subject(:book) { create(:book) }
+  let(:arr) { [:author,:title,:genre,:image,:publisher,:year] }
 
   describe '#create' do
     context 'When the book is properly set' do
@@ -11,45 +11,11 @@ describe Book, type: :model do
       end
     end
 
-    context 'When the author is nil' do
+    context 'When the book is created' do
       it do
-        book.author = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the title is nil' do
-      it do
-        book.title = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the genre is nil' do
-      it do
-        book.genre = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the image is nil' do
-      it do
-        book.image = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the publisher is nil' do
-      it do
-        book.publisher = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the year is nil' do
-      it do
-        book.year = nil
-        is_expected.to be_invalid
+        arr.each do |attr|
+          is_expected.to validate_presence_of(attr)
+        end
       end
     end
   end
