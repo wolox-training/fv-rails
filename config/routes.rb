@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'rents/create', to:'rent#create'
+  get 'rents', to: 'rent#index'
   get 'books', to: 'book#index'
   get 'books/show', to: 'book#show'
   mount_devise_token_auth_for 'User', at: 'auth'
