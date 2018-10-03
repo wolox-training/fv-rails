@@ -10,31 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_10_02_193228) do
-=======
 ActiveRecord::Schema.define(version: 2018_09_26_143501) do
->>>>>>> e43e131... Added Rent model which belongs_to Book and User. User can now call .rents to show the rents that belong to it.
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-<<<<<<< HEAD
     t.string "genre", null: false
     t.string "author", null: false
     t.string "image", null: false
     t.string "title", null: false
     t.string "publisher", null: false
     t.string "year", null: false
-=======
-    t.string "genre"
-    t.string "author"
-    t.string "image"
-    t.string "title"
-    t.string "publisher"
-    t.string "year"
->>>>>>> e43e131... Added Rent model which belongs_to Book and User. User can now call .rents to show the rents that belong to it.
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
