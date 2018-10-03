@@ -72,9 +72,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-<<<<<<< HEAD
-
-=======
->>>>>>> 0c49454... Deleted shoulda matchers
   # config.action_mailer.default_url_options = { :host => "localhost:3000" }
 end
