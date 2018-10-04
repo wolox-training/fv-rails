@@ -8,7 +8,7 @@ class RentController < ApplicationController
   end
 
   def index
-    render_paginated Rent.all, limit: 2
+    render_paginated Rent.where(user_id: params[:user_id]), limit: 2
   end
 
   before_action :authenticate_user!
