@@ -8,16 +8,12 @@ class UserMailer < ApplicationMailer
     @url  = 'localhost:3000'
     mail(to: @user.email,
          subject: 'Rent created succesfully',
-         date: DateTime.now) do |format|
-           format.html
-         end
+         date: Time.zone.now)
   end
 
   def mail_test(user_id)
     @user = User.find(user_id)
-    mail( to: @user.email,
-          subject: 'test') do |format|
-            format.html
-        end
+    mail(to: @user.email,
+         subject: 'test')
   end
 end
