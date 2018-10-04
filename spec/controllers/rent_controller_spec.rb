@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe RentController, type: :controller do
+  include_context 'Authenticated User'
+  include Devise::Test::ControllerHelpers
 
   describe "GET #create" do
     it "returns http success" do
