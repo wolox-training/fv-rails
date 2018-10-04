@@ -1,56 +1,15 @@
 require 'rails_helper'
 
 describe Book, type: :model do
-  let(:book) { create(:book) }
-  subject { book }
+  subject(:book) { create(:book) }
 
   describe '#create' do
-    context 'When the book is properly set' do
-      it do
-        is_expected.to be_valid
-      end
-    end
-
-    context 'When the author is nil' do
-      it do
-        book.author = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the title is nil' do
-      it do
-        book.title = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the genre is nil' do
-      it do
-        book.genre = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the image is nil' do
-      it do
-        book.image = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the publisher is nil' do
-      it do
-        book.publisher = nil
-        is_expected.to be_invalid
-      end
-    end
-
-    context 'When the year is nil' do
-      it do
-        book.year = nil
-        is_expected.to be_invalid
-      end
-    end
+    it { is_expected.to be_valid }
+    it { is_expected.to validate_presence_of(:author) }
+    it { is_expected.to validate_presence_of(:genre) }
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:year) }
+    it { is_expected.to validate_presence_of(:publisher) }
+    it { is_expected.to validate_presence_of(:image) }
   end
 end
