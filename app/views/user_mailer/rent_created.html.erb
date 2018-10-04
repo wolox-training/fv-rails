@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>This is an automated email from WBooks</h1>
+    <p>
+      You have successfully created a rent for the following book:<br>
+      Title: <%= @book.title %>.<br>
+      Author: <%= @book.author %>.<br>
+      Genre: <%= @book.genre %>.<br>
+      Publisher: <%= @book.publisher %>.<br>
+      Year: <%= @book.year %>.<br>
+      Image: <%= @book.image %>.
+    </p>
+    <p>
+      The rent will last from <%= @rent.initial_date %> to <%= @rent.final_date %>.
+    </p>
+    <p>
+      Please visit our super-duper cool site: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

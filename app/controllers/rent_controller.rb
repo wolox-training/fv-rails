@@ -3,8 +3,10 @@ class RentController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
 
   def create
-    Rent.create(user_id: params[:user], book_id: params[:book],
+    rent = Rent.create(user_id: params[:user], book_id: params[:book],
                 initial_date: params[:idate], final_date: params[:fdate])
+    ummm = UserMailer.rent_created(rent)
+    ummm.deliver_now
   end
 
   def index
