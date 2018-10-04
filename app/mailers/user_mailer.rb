@@ -6,6 +6,7 @@ class UserMailer < ApplicationMailer
     @book = Book.find(rent.book_id)
     @user = User.find(rent.user_id)
     @url  = 'localhost:3000'
+    @date = Time.zone.now
     mail(to: @user.email,
          subject: 'Rent created succesfully',
          date: Time.zone.now)

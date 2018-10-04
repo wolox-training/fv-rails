@@ -6,7 +6,7 @@ class RentController < ApplicationController
     rent = Rent.create(user_id: params[:user], book_id: params[:book],
                        initial_date: params[:idate], final_date: params[:fdate])
     ummm = UserMailer.rent_created(rent)
-    ummm.deliver_now
+    ummm.deliver_later
   end
 
   def index
