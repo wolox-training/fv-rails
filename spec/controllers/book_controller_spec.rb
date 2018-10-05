@@ -7,7 +7,7 @@ describe BookController, type: :controller do
 
   describe 'GET #index' do
     context 'When fetching all the books' do
-      let!(:books) { create_list(:book, 3) }
+      let(:books) { create_list(:book, 3) }
 
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
@@ -24,11 +24,9 @@ describe BookController, type: :controller do
 
   describe 'GET #show' do
     context 'When fetching a book' do
-      let!(:book) { create(:book) }
+      let(:book) { create(:book) }
 
-      before do
-        get :show, params: { id: book.id }
-      end
+      subject { get :show, params: { id: book.id } }
 
       it 'responses with the book json' do
         expect(response.body.to_json) =~ BookSerializer.new(book).to_json
