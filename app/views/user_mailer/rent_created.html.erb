@@ -4,23 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>This is an automated email from WBooks</h1>
+    <h1><%= t('title.automated') %></h1>
     <p>
-      You have successfully created a rent for the following book:<br>
-      Title: <%= @book.title %>.<br>
-      Author: <%= @book.author %>.<br>
-      Genre: <%= @book.genre %>.<br>
-      Publisher: <%= @book.publisher %>.<br>
-      Year: <%= @book.year %>.<br>
-      Image: <%= @book.image %>.
+      <%= t('body.successful_rent') %><br>
+      <%= t('body.title') %>: <%= @book.title %>.<br>
+      <%= t('body.author') %>: <%= @book.author %>.<br>
+      <%= t('body.genre') %>: <%= @book.genre %>.<br>
+      <%= t('body.publisher') %>: <%= @book.publisher %>.<br>
+      <%= t('body.year') %>: <%= @book.year %>.<br>
+      <%= t('body.image') %>: <%= @book.image %>.
     </p>
     <p>
-      The rent was created on <%= @date %> and will last from
-       <%= @rent.initial_date %> to <%= @rent.final_date %>.
+      <%=t('body.dates', date: @date, initial_date: @rent.initial_date,
+           final_date: @rent.final_date)%>.
     </p>
     <p>
-      Please visit our super-duper cool site: <%= @url %>.
+      <%= t('body.shilling',url: @url) %>.
     </p>
-    <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
