@@ -9,5 +9,4 @@ class BookController < ApplicationController
   def show
     render json: Book.find(params[:id])
   end
-
 end
