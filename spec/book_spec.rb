@@ -1,15 +1,7 @@
 require 'rails_helper'
-require 'database_cleaner'
-
-DatabaseCleaner.strategy = :truncation
 
 describe Book, type: :model do
   subject(:book) { create(:book) }
-
-  after(:all) do
-    DatabaseCleaner.clean
-    puts 'The database should be clean nao'
-  end
 
   describe '#create' do
     it { is_expected.to be_valid }
