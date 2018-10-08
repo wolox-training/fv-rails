@@ -58,7 +58,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   # Para crear factories en los modelos
-  gem 'factory_bot_rails', :require => false
+  gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'faker'
 end

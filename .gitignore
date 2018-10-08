@@ -27,3 +27,5 @@
 /config/master.key
 
 /test/*
+.env
+dump.rbd
