@@ -11,7 +11,7 @@ en:
     image: 'Image'
     dates: 'The rent was created on %{date} and will last from
             %{initial_date} to %{final_date}'
-    shilling: 'Please visit our super-duper cool site: %{url}'
+    shilling: 'Please visit our super-duper cool site!'
   user_mailer:
     rent_created:
       subject: "Rent created succesfully"

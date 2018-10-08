@@ -5,7 +5,6 @@ class UserMailer < ApplicationMailer
     @rent = Rent.find(rent_id)
     @book = @rent.book
     @user = @rent.user
-    @url  = :host
     @date = Time.zone.now
     mail(to: @user.email,
          subject: default_i18n_subject,

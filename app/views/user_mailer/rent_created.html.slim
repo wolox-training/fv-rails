@@ -1,13 +1,13 @@
 h1 This is an automated email from WBooks
-p You have successfully created a rent for the following book:
-p Title: #{@book.title}
-p Author: #{@book.author}
-p Genre: #{@book.genre}
-p Publisher: #{@book.publisher}
-p Year: #{@book.year}
-p Image: #{@book.image}
-p The rent was created on #{@date} and will last from #{@rent.initial_date}
-  to #{@rent.final_date}.
+p t('title.automated'):
+p t('body.title'): #{@book.title}
+p t('body.author'): #{@book.author}
+p t('body.genre'): #{@book.genre}
+p t('body.publisher'): #{@book.publisher}
+p t('body.year'): #{@book.year}
+p t('body.image'): #{@book.image}
+p t('body.dates', date: @date, initial_date: @rent.initial_date,
+     final_date: @rent.final_date)
 p
-p Please visit our super-duper cool site: = #{@url}.
+p t('body.shilling').
 p Thanks for joining and have a great day!

@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2018_10_08_141711) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "book_id"
-    t.date "initial_date"
-    t.date "final_date"
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
+    t.date "initial_date", null: false
+    t.date "final_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_rents_on_book_id"

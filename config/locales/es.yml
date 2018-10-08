@@ -11,7 +11,7 @@ es:
     image: 'Imagen'
     dates: 'La renta fue creada el día %{date} y es valida desde el dia
             %{initial_date} hasta el %{final_date}'
-    shilling: 'Visite nuestro sitio: %{url}'
+    shilling: 'Visite nuestro sitio!'
   user_mailer:
     rent_created:
       subject: 'Renta creada exitosamente'
