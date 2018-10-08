@@ -1,0 +1,17 @@
+es:
+  title:
+    automated: 'Este mail fue enviado automaticamente por WBooks'
+  body:
+    successful_rent: 'Ha creado una renta exitosamente para el siguiente libro:'
+    title: 'Titulo'
+    author: 'Autor'
+    genre: 'Genero'
+    year: 'Año'
+    publisher: 'Editorial'
+    image: 'Imagen'
+    dates: 'La renta fue creada el día %{date} y es valida desde el dia
+            %{initial_date} hasta el %{final_date}'
+    shilling: 'Visite nuestro sitio: %{url}'
+  user_mailer:
+    rent_created:
+      subject: 'Renta creada exitosamente'

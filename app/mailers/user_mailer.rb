@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
     @url  = :host
     @date = Time.zone.now
     mail(to: @user.email,
-         subject: 'Rent created succesfully',
+         subject: default_i18n_subject,
          date: Time.zone.now)
   end
 end
