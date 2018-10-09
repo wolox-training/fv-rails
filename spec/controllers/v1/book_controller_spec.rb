@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'support/shared_context'
 
-describe BookController, type: :controller do
+describe V1::BookController, type: :controller do
   include_context 'Authenticated User'
   include Devise::Test::ControllerHelpers
 
