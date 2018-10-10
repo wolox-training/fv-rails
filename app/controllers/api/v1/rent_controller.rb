@@ -13,7 +13,7 @@ module Api
         end
       end
 
-        def index
+      def index
         render_paginated Rent.where(user_id: params[:user_id]), limit: 2
       end
 
