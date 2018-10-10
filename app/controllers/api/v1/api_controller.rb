@@ -3,7 +3,7 @@ module Api
     class ApiController < ApplicationController
       include Wor::Paginate
       include DeviseTokenAuth::Concerns::SetUserByToken
-      protect_from_forgery with: :exception
+      protect_from_forgery with: :null_session
       before_action :authenticate_user!
     end
   end
