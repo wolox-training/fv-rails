@@ -23,10 +23,10 @@ describe Api::V1::BookController, type: :controller do
   end
 
   describe 'GET #show' do
+    subject(:bookresponse) { get :show, params: { id: book.id } }
+
     context 'When fetching a book' do
       let(:book) { create(:book) }
-
-      subject { get :show, params: { id: book.id } }
 
       it 'responses with the book json' do
         expect(response.body.to_json) =~ BookSerializer.new(book).to_json
