@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include DeviseTokenAuth::Concerns::SetUserByToken
-  ## TODO: When we start configuring controllers we will transfer this to the ApiController
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token, if: :devise_controller?
 end

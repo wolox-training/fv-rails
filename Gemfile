@@ -46,7 +46,14 @@ gem 'devise', '~> 4.5.0'
 
 # Login authenticacion
 gem 'devise_token_auth', '~> 1.0.0.rc2'
+
+# Json serializer
+gem 'active_model_serializers', '~> 0.10.0'
 #####
+
+gem 'wor-paginate', '~> 0.1.4'
+
+gem 'versionist', '~> 1.7.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -74,7 +81,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'shoulda-matchers', '4.0.0.rc1'
-  gem 'rails-controller-testing'  
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
