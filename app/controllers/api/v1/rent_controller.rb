@@ -1,8 +1,13 @@
 module Api
   module V1
     class RentController < ApiController
-      include Wor::Paginate
-      include DeviseTokenAuth::Concerns::SetUserByToken
+      def index
+        if current_user
+          render_paginated Rent.where(user_id: current_user.id)
+        else
+          render json: 'Error: cannot find user'
+        end
+      end
 
       def create
         rent = Rent.new(create_params)
@@ -11,10 +16,6 @@ module Api
         else
           render json: 'Something went wrong and your rent creation failed :('
         end
-      end
-
-      def index
-        render_paginated Rent.where(user_id: params[:user_id]), limit: 2
       end
 
       private
