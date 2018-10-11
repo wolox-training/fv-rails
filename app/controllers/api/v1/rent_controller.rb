@@ -1,6 +1,7 @@
 module Api
   module V1
     class RentController < ApiController
+      layout 'mailer'
       def index
         if current_user
           render_paginated Rent.where(user_id: current_user.id)
@@ -12,6 +13,7 @@ module Api
       def create
         rent = Rent.new(create_params)
         if rent.save
+          UserMailer.rent_created(rent.id).deliver_later
           render json: 'Rent created and saved!'
         else
           render json: 'Something went wrong and your rent creation failed :('

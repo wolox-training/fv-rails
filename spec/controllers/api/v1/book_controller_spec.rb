@@ -10,9 +10,8 @@ describe Api::V1::BookController, type: :controller do
       let(:books) { create_list(:book, 3) }
 
       it 'responses with the books json' do
-        expected = ActiveModel::Serializer::CollectionSerializer.new(
-          books, each_serializer: BookSerializer
-        ).to_json
+        expected = ActiveModel::Serializer::CollectionSerializer
+                   .new(books).to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
 

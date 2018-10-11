@@ -9,6 +9,19 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => Rails.application.credentials.USER_NAME,
+    :password => Rails.application.credentials.PASSWORD,
+    :address => Rails.application.credentials.ADDRESS,
+    :domain => Rails.application.credentials.DOMAIN,
+    :port => Rails.application.credentials.PORT,
+    :authentication => :plain
+  }
+
+  config.active_job.queue_adapter = :sidekiq
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
