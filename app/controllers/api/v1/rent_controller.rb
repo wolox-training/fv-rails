@@ -20,6 +20,12 @@ module Api
         end
       end
 
+      def show
+        @rent = Rent.find(params[:id])
+        authorize @rent
+        render json: @rent
+      end
+
       private
 
       def create_params
