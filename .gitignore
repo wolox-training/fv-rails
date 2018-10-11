@@ -29,3 +29,4 @@
 /test/*
 .env*
 dump.rdb
+.rake_tasks*
