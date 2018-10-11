@@ -13,11 +13,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => Rails.application.credentials.USER_NAME,
-    :password => Rails.application.credentials.PASSWORD,
-    :address => Rails.application.credentials.ADDRESS,
-    :domain => Rails.application.credentials.DOMAIN,
-    :port => Rails.application.credentials.PORT,
+    :user_name => Rails.application.credentials.user_name,
+    :password => Rails.application.credentials.password,
+    :address => Rails.application.credentials.address,
+    :domain => Rails.application.credentials.domain,
+    :port => Rails.application.credentials.port,
     :authentication => :plain
   }
 

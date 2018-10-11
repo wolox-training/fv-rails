@@ -1,0 +1,14 @@
+<h1><%= t('title.automated') %></h1>
+<p> <%= t('body.title') %>: <%= @book.title %>. </p>
+<p> <%= t('body.author') %>: <%= @book.author %>. </p>
+<p> <%= t('body.genre') %>: <%= @book.genre %>. </p>
+<p> <%= t('body.publisher') %>: <%= @book.publisher %>. </p>
+<p> <%= t('body.year') %>: <%= @book.year %>. </p>
+<p> <%= t('body.image') %>: <%= @book.image %>. </p>
+<p>
+  <%=t('body.dates', date: @date, initial_date: @rent.initial_date,
+       final_date: @rent.final_date)%>.
+</p>
+<p>
+  <%= t('body.shilling') %>
+</p>
