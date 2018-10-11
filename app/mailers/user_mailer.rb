@@ -4,7 +4,6 @@ class UserMailer < ApplicationMailer
   def rent_created(rent_id)
     @rent = Rent.find(rent_id)
     @book = @rent.book
-    @user = @rent.user
     @date = Time.zone.now
     mail(to: @user.email,
          subject: default_i18n_subject,
