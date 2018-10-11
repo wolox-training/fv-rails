@@ -1,6 +1,7 @@
 module Api
   module V1
     class RentController < ApiController
+      layout 'mailer'
       def index
         if current_user
           render_paginated Rent.where(user_id: current_user.id)

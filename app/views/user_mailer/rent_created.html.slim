@@ -1,16 +1,13 @@
-doctype html
-html
-  body
-    h1 This is an automated email from WBooks
-    p You have successfully created a rent for the following book:
-    p Title: #{@book.title}
-    p Author: #{@book.author}
-    p Genre: #{@book.genre}
-    p Publisher: #{@book.publisher}
-    p Year: #{@book.year}
-    p Image: #{@book.image}
-    p The rent was created on #{@date} and will last from #{@rent.initial_date}
-      to #{@rent.final_date}.
-    p
-    p Please visit our super-duper cool site: = #{@url}.
-    p Thanks for joining and have a great day!
+h1 This is an automated email from WBooks
+p You have successfully created a rent for the following book:
+p Title: #{@book.title}
+p Author: #{@book.author}
+p Genre: #{@book.genre}
+p Publisher: #{@book.publisher}
+p Year: #{@book.year}
+p Image: #{@book.image}
+p The rent was created on #{@date} and will last from #{@rent.initial_date}
+  to #{@rent.final_date}.
+p
+p Please visit our super-duper cool site: = #{@url}.
+p Thanks for joining and have a great day!
