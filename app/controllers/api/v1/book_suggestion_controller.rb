@@ -17,7 +17,7 @@ module Api
       private
 
       def create_params
-        params.permit(:title, :author, :publisher, :link, :year,
+        params.permit(:user_id, :title, :author, :publisher, :link, :year,
                       :synopsis, :price)
       end
     end
