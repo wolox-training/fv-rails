@@ -7,6 +7,5 @@ FactoryBot.define do
     link { Faker::Internet.url }
     publisher { Faker::Book.publisher }
     year { Faker::Time.backward(14, :evening).year }
-    user { nil }
   end
 end
