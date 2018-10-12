@@ -10,7 +10,7 @@ module Api
 
       def user_not_authorized
         flash[:warning] = "You have met a terrible fate, haven't you?"
-        redirect_to '/api/v1/book'
+        redirect_to api_v1_book_index_path
       end
 
       def set_locale
