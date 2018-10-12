@@ -9,4 +9,8 @@ class RentPolicy
   def create?
     user.id == rent.user_id
   end
+
+  def index?
+    user.id == rent.user.id
+  end
 end

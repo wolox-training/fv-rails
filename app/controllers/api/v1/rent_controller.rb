@@ -3,18 +3,17 @@ module Api
     class RentController < ApiController
       layout 'mailer'
       def index
-        if current_user
-          render_paginated Rent.where(user_id: current_user.id)
-        else
-          render json: 'Error: cannot find user'
+        Rent.where(user_id: current_user.id).each do |rent|
+          authorize rent
         end
+        render_paginated Rent.where(user_id: current_user.id)
       end
 
       def create
-        @rent = Rent.new(create_params)
-        authorize @rent
-        if @rent.save
-          UserMailer.rent_created(@rent.id).deliver_later
+        rent = Rent.new(create_params)
+        authorize rent
+        if rent.save
+          UserMailer.rent_created(rent.id).deliver_later
           render json: 'Rent created and saved!'
         else
           render json: 'Something went wrong and your rent creation failed :('
