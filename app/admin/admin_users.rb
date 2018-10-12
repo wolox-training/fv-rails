@@ -1,4 +1,6 @@
 ActiveAdmin.register AdminUser do
+  I18n.locale = 'en'
+
   permit_params :email, :password, :password_confirmation
 
   index do
