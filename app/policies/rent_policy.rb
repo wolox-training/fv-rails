@@ -6,7 +6,7 @@ class RentPolicy
     @rent = rent
   end
 
-  def show?
+  def create?
     user.id == rent.user_id
   end
 end
