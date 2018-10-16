@@ -4,9 +4,9 @@ module Api
       skip_before_action :verify_authenticity_token
 
       def create
-        bs = BookSuggestion.new(create_params)
-        bs.user_id = current_user ? current_user.id : nil
-        if bs.save
+        new_book_sugg = BookSuggestion.new(create_params)
+        new_book_sugg.user_id = current_user ? current_user : nil
+        if new_book_sugg.save
           render json: 'Book suggestion created and saved!'
         else
           render json: 'The book suggestion could not be created'
