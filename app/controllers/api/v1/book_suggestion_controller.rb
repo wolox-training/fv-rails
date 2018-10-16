@@ -5,7 +5,7 @@ module Api
 
       def create
         new_book_sugg = BookSuggestion.new(create_params)
-        new_book_sugg.user_id = current_user ? current_user : nil
+        new_book_sugg.user_id = current_user || nil
         if new_book_sugg.save
           render json: 'Book suggestion created and saved!'
         else
