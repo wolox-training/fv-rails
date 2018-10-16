@@ -7,7 +7,7 @@ module Api
         new_book_sugg = BookSuggestion.new(create_params)
         new_book_sugg.user = current_user || nil
         if new_book_sugg.save
-          render json: 'Book suggestion created and saved!'
+          render json: 'Book suggestion created and saved!', status: :created
         else
           render json: 'The book suggestion could not be created',
                  status: :bad_request
