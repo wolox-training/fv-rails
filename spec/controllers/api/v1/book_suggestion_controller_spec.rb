@@ -3,7 +3,6 @@ require 'support/shared_context'
 
 describe Api::V1::BookSuggestionController, type: :controller do
   include_context 'Authenticated User'
-  include Devise::Test::ControllerHelpers
   describe 'POST #create' do
     subject(:post_create) { post :create, params: book_sugg }
 
