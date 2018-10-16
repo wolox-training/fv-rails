@@ -6,4 +6,5 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
   validates :first_name, :last_name, :locale, presence: true
   has_many :rents, dependent: :destroy
+  has_many :book_suggestions, dependent: :restrict_with_exception
 end
