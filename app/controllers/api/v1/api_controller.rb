@@ -6,6 +6,12 @@ module Api
       protect_from_forgery with: :null_session
       before_action :authenticate_user!
       before_action :set_locale
+      rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+      def user_not_authorized
+        flash[:warning] = "You have met a terrible fate, haven't you?"
+        redirect_to api_v1_book_index_path
+      end
 
       def set_locale
         I18n.locale = current_user ? current_user.locale : 'en'
