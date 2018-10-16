@@ -1,45 +1,45 @@
+require 'rails_helper'
+require 'support/shared_context'
+
 describe Api::V1::BookSuggestionController, type: :controller do
   include_context 'Authenticated User'
   include Devise::Test::ControllerHelpers
-
   describe 'POST #create' do
+    subject(:post_create) { post :create, params: book_sugg }
+
     context 'When creating a BookSuggestion with a valid user' do
-      let!(:book_sugg) { create(:book_suggestion, user: user) }
-      let(:post_create) do
-        post :create,
-             params: { user_id: book_sugg.user_id, title: book_sugg.title,
-                       link: book_sugg.link, year: book_sugg.year,
-                       publisher: book_sugg.publisher, author: book_sugg.author }
-      end
+      let(:book_sugg) { attributes_for(:book_suggestion, user: user) }
       it 'creates a new book_suggestion' do
-        expect do
-          post_create
-        end.to change { BookSuggestion.count }.by(1)
+        expect { subject }.to change { BookSuggestion.count }.by(1)
       end
 
       it 'responds with 201 status' do
-        post_create
+        subject
         expect(response).to have_http_status(:created)
       end
     end
 
     context 'When creating a BookSuggestion with no user' do
-      let!(:book_sugg) { create(:book_suggestion) }
-      let(:post_create) do
-        post :create,
-             params: { user_id: book_sugg.user_id, title: book_sugg.title,
-                       link: book_sugg.link, year: book_sugg.year,
-                       publisher: book_sugg.publisher, author: book_sugg.author }
-      end
+      let(:book_sugg) { attributes_for(:book_suggestion, user: nil) }
       it 'creates a new book_suggestion' do
-        expect do
-          post_create
-        end.to change { BookSuggestion.count }.by(1)
+        expect { subject }.to change { BookSuggestion.count }.by(1)
       end
 
       it 'responds with 201 status' do
-        post_create
+        subject
         expect(response).to have_http_status(:created)
+      end
+    end
+
+    context 'When creating a BookSuggestion with no author' do
+      let(:book_sugg) { attributes_for(:book_suggestion, author: nil) }
+      it 'does not create a new BookSuggestion' do
+        expect { subject }.to change { BookSuggestion.count }.by(0)
+      end
+
+      it 'responds with 422 status' do
+        subject
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
