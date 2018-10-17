@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
     @book = @rent.book
     @date = Time.zone.now
     mail(to: @rent.user.email,
-         subject: "Rent expired",
+         subject: 'Rent expired',
          date: Time.zone.now)
   end
 end
