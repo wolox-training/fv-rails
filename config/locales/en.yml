@@ -3,6 +3,8 @@ en:
     automated: 'This is an automated email from WBooks'
   body:
     successful_rent: 'You have successfully created a rent for the following book:'
+    expired_rent: 'Your rent has expired, you have 24 hours to return the rented book before we send someone to break your kneecaps.
+                   The details of the rented book are below:'
     title: 'Title'
     author: 'Author'
     genre: 'Genre'
@@ -11,6 +13,7 @@ en:
     image: 'Image'
     dates: 'The rent was created on %{date} and will last from
             %{initial_date} to %{final_date}'
+    warning: 'We are serious. Give it back. Now'
     shilling: 'Please visit our super-duper cool site!'
   user_mailer:
     rent_created:

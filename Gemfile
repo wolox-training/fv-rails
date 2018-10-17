@@ -65,6 +65,7 @@ gem 'pundit', '~> 2.0.0'
 
 gem 'httparty', '~> 0.16.2'
 
+gem 'sidekiq-scheduler', '~> 3.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

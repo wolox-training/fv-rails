@@ -9,4 +9,13 @@ class UserMailer < ApplicationMailer
          subject: default_i18n_subject,
          date: Time.zone.now)
   end
+
+  def rent_expired(rent_id)
+    @rent = Rent.find(rent_id)
+    @book = @rent.book
+    @date = Time.zone.now
+    mail(to: @rent.user.email,
+         subject: "Rent expired",
+         date: Time.zone.now)
+  end
 end

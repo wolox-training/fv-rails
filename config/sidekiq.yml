@@ -3,3 +3,7 @@
 :queues:
   - default
   - mailers
+:schedule:
+  expired_rent_scheduler:
+    cron: '0 0 9 * * * America/Argentina/Buenos_Aires'
+    class: ExpiredRentScheduler
