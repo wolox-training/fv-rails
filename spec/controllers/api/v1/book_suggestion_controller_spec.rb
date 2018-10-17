@@ -38,7 +38,7 @@ describe Api::V1::BookSuggestionController, type: :controller do
 
       it 'responds with 422 status' do
         subject
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:bad_request)
       end
     end
   end
