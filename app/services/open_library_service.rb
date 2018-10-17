@@ -2,25 +2,34 @@ class OpenLibraryService
   include HTTParty
 
   base_uri Rails.application.credentials.open_library_uri
-  default_params format: 'json', jscmd: 'data'
   format :json
+  
+  attr_accessor :isbn, :base_uri, :format, :jscmd
 
-  def initialize; end
+  def initialize(isbn)
+    @base_uri = OpenLibraryService.base_uri
+    @format = 'json'
+    @jscmd = 'data'
+    @isbn = isbn
+  end
 
-  def self.book_info(isbn)
-    response = request_isbn(isbn)
+  def book_info
+    response = request_isbn
     if response.nil? || !isbn.start_with?('ISBN:')
       nil
     else
-      cleanup(response.parsed_response[isbn], isbn)
+      cleanup(response.parsed_response[isbn])
     end
   end
 
-  def self.request_isbn(isbn)
-    get(base_uri, query: { bibkeys: isbn })
+  private
+  def request_isbn
+    OpenLibraryService.get(base_uri, query: { bibkeys: isbn,
+                                              format: format,
+                                              jscmd: jscmd })
   end
 
-  def self.cleanup(res, isbn)
+  def cleanup(res)
     json = {}
     json[:ISBN] = isbn
     json[:title] = res['title']
@@ -29,6 +38,4 @@ class OpenLibraryService
     json[:authors] = res['authors']
     json
   end
-
-  private_class_method request_isbn, cleanup
 end

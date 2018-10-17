@@ -2,15 +2,11 @@ module Api
   module V1
     class BookController < ApiController
       def index
-        if params[:isbn].nil?
-          render_paginated Book.all
-        else
-          show_isbn
-        end
+        render_paginated Book.all
       end
 
-      def show_isbn
-        response = OpenLibraryService.book_info(params[:isbn])
+      def isbn
+        response = OpenLibraryService.new(params[:isbn]).book_info
         if response.nil?
           render json: 'Error: bad ISBN code', status: :bad_request
         else
