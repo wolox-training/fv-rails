@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :book_suggestion, only: [:create]
     resources :book, only: [:index, :show] do
      collection do
-        get 'isbn'
+        get :isbn
       end
     end
   end

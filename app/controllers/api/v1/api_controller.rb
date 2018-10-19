@@ -7,10 +7,16 @@ module Api
       before_action :authenticate_user!
       before_action :set_locale
       rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+      rescue_from ActionController::ParameterMissing, with: :missing_parameter
 
       def user_not_authorized
         flash[:warning] = "You have met a terrible fate, haven't you?"
-        render json: "Autorization failure #{current_user.id}"
+        render json: "Autorization failure", status: :user_not_authorized
+      end
+
+      def missing_parameter
+        return render json: 'Error: the required parameter was not entered',
+                      status: :bad_request
       end
 
       def set_locale
