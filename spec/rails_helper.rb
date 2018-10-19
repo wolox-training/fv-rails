@@ -70,6 +70,8 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include Devise::Test::ControllerHelpers, type: :controller
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   # config.action_mailer.default_url_options = { :host => "localhost:3000" }

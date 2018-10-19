@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe Book, type: :model do
+  include Devise::Test::IntegrationHelpers
   subject(:book) { create(:book) }
 
   describe '#create' do
