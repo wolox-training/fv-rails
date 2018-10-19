@@ -18,3 +18,6 @@ en:
   user_mailer:
     rent_created:
       subject: "Rent created succesfully"
+  user_mailer:
+    expired_rent:
+      subject: "Rent expired"
