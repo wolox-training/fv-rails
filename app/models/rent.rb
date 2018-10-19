@@ -7,8 +7,7 @@ class Rent < ApplicationRecord
     book_rents = Rent.where('book_id = ?', book_id)
     book_rents.delete(self)
     book_rents.all? do |previous_rent|
-      previous_rent.initial_date > final_date ||
-      previous_rent.final_date < initial_date
+      previous_rent.initial_date > final_date || previous_rent.final_date < initial_date
     end
   end
 end

@@ -6,12 +6,16 @@ module Api
       end
 
       def isbn
-        response = OpenLibraryService.new(params[:isbn]).book_info
-        if response.nil?
-          render json: 'Error: bad ISBN code', status: :bad_request
-        else
-          render json: response
+        begin
+          isbn = params.require(:isbn)
+        rescue ActionController::ParameterMissing
+          return render json: 'Error: no ISBN code was entered',
+                        status: :bad_request
         end
+        response = OpenLibraryService.fetch(isbn)
+        return render json: 'Error: bad ISBN code', status: :bad_request if response.nil?
+
+        render json: response
       end
 
       def show
