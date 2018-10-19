@@ -7,15 +7,14 @@ class Rent < ApplicationRecord
   protected
 
   def dates
-    unless valid_dates?
-      errors.add(:base,'The dates entered are invalid') and return false
-    end
+    return if valid_dates?
+
+    errors.add(:base, 'The dates entered are invalid')
+    false
   end
 
   def valid_dates?
-    book_rents = Rent.where('book_id = ?', book_id)
-    book_rents.all? do |previous_rent|
-      previous_rent.initial_date > final_date || previous_rent.final_date < initial_date
-    end
+    book.rents.where(initial_date: initial_date..final_date,
+                     final_date: initial_date..final_date).empty?
   end
 end
