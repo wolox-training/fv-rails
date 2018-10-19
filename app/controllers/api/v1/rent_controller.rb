@@ -11,8 +11,6 @@ module Api
 
       def create
         rent = Rent.new(create_params)
-        return render json: 'Rent dates invalid' unless rent.valid_dates?
-
         authorize rent
         return render json: 'Rent creation failed', status: :bad_request unless rent.save
 
