@@ -8,8 +8,7 @@ module Api
       def isbn
         isbn = params.require(:isbn)
         response = OpenLibraryService.new(isbn).book_info
-        return render json: 'Error: bad ISBN code',
-                      status: :bad_request if response == {}
+        return render json: 'Error: bad ISBN code', status: :bad_request if response == {}
 
         render json: response
       end

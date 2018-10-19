@@ -10,13 +10,12 @@ module Api
       rescue_from ActionController::ParameterMissing, with: :missing_parameter
 
       def user_not_authorized
-        flash[:warning] = "You have met a terrible fate, haven't you?"
-        render json: "Autorization failure", status: :user_not_authorized
+        render json: 'Autorization failure', status: :user_not_authorized
       end
 
       def missing_parameter
-        return render json: 'Error: the required parameter was not entered',
-                      status: :bad_request
+        render json: 'Error: the required parameter was not entered',
+               status: :bad_request
       end
 
       def set_locale
