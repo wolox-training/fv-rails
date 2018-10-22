@@ -7,7 +7,7 @@ class Rent < ApplicationRecord
   protected
 
   def dates
-    return if valid_dates?
+    return if valid_dates? && inside_dates?
 
     errors.add(:base, 'The dates entered are invalid')
     false
@@ -16,5 +16,10 @@ class Rent < ApplicationRecord
   def valid_dates?
     book.rents.where(initial_date: initial_date..final_date,
                      final_date: initial_date..final_date).empty?
+  end
+
+  def inside_dates?
+    book.rents.where('initial_date < ? AND final_date > ?',
+                     initial_date, final_date).empty?
   end
 end
