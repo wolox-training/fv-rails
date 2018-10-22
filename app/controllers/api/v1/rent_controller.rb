@@ -12,12 +12,10 @@ module Api
       def create
         rent = Rent.new(create_params)
         authorize rent
-        if rent.save
-          UserMailer.rent_created(rent.id).deliver_later
-          render json: 'Rent created and saved!'
-        else
-          render json: 'Something went wrong and your rent creation failed :('
-        end
+        return render json: 'Rent creation failed', status: :bad_request unless rent.save
+
+        UserMailer.rent_created(rent.id).deliver_later
+        render json: 'Rent created and saved!'
       end
 
       private
